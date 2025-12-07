@@ -1,0 +1,12 @@
+[tools]
+uv = "latest"
+
+[env]
+# Auto-create virtualenv at .venv using uv (if available)
+_.python.venv = { path = ".venv", create = true }
+
+[tasks.sync]
+description = "Install dependencies with uv"
+run = "uv sync"
+# Only runs if these files change
+sources = ["uv.lock", "pyproject.toml"]
